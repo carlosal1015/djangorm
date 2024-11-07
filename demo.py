@@ -2,9 +2,9 @@
 from test.models import *
 
 try:
-    alice = User.objects.get(name='Alice')
+    alice = User.objects.get(name="Alice")
 except:
-    alice = User(name='Alice')
+    alice = User(name="Alice")
     alice.save()
 
 for user in User.objects.all():

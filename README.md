@@ -1,19 +1,24 @@
 DjangORM
 ====
-A library that allows you to use Django's excellent ORM without having to use the rest of Django.
+
+A library that allows you to use Django's excellent ORM without having to use
+the rest of Django.
 
 Dependencies
 ----
+
 * Django
 
 Installation
 ---
+
 Just clone the repository to wherever you like.
 
 Usage
 ----
 
 * Setting up the default database (SQLite)
+
 ```python
 # [your_module_name]/__init__.py
 import os
@@ -26,6 +31,7 @@ db.migrate()
 ```
 
 * Setting up a custom database (MySQL)
+
 ```python
 # [your_module_name]/__init__.py
 from djangorm import DjangORM
@@ -43,6 +49,7 @@ db.migrate()
 ```
 
 * Define the models:
+
 ```python
 # [your_module_name]/models.py
 from django.db import models
@@ -52,6 +59,7 @@ class User(models.Model):
 ```
 
 * Write your python code
+
 ```python
 from [your_module_name].models import *
 
@@ -67,19 +75,23 @@ for user in User.objects.all():
 
 Tips
 ----
+
 * If you get errors when doing migrations, try removing `[your_module_name]/migrations`.
 
 * There is a function that checking if all the fields are correct.
+
 ```python
 db.check_models(models)
 ```
 
 * Specify the relative path of the module
+
 ```python
 db = DjangORM(module_name='[your_module_name]', module_path='[relative_path]')
 ```
 
-Acknownledgement
+Acknowledgement
 ----
+
 * [Official Django documentation about Django Models](https://docs.djangoproject.com/en/2.0/topics/db/models/)
 * [dancaron/Django-ORM](https://github.com/dancaron/Django-ORM)

@@ -1,1 +1,1 @@
-from . djangorm import DjangORM
+from .djangorm import DjangORM
