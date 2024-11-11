@@ -1,0 +1,38 @@
+[build-system]
+requires = ["flit-core >= 3.8"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "djangorm"
+description = "A library that allows you to use Django's excellent ORM without having to use the rest of Django"
+readme = "README.md"
+requires-python = ">= 3.12"
+license.file = "LICENSE"
+authors = [
+  { name = "Jingbei Li", email = "i@jingbei.li" },
+  { name = "Carlos Aznarán", email = "caznaranl@uni.pe" },
+]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: Implementation :: CPython",
+]
+urls.homepage = "https://github.com/arch4edu"
+urls.issues = "https://github.com/petronny/djangorm/issues"
+urls.source = "https://github.com/petronny/djangorm"
+# Version read from __version__ field in __init__.py by Flit
+dynamic = ["version"]
+dependencies = [
+  "django >= 5.1.2",
+]
+
+[project.optional-dependencies]
+test = [
+  "build[uv, virtualenv]",
+  "pytest >= 6.2.4",
+  "wheel >= 0.36.0",
+  'setuptools >= 67.8.0; python_version >= "3.12"',
+]
